@@ -1,8 +1,11 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -12,11 +15,19 @@ android {
     defaultConfig {
         applicationId = "com.lganado.day1transfer2"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled = true
+    }
+
+    packaging {
+        resources {
+            excludes.add("META-INF/gradle/incremental.annotation.processors")
+        }
     }
 
     buildTypes {
@@ -29,11 +40,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true // Enable desugaring
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_11
+        }
     }
     buildFeatures {
         compose = true
@@ -52,14 +66,15 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.navigation.compose)
-    implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.hilt.compose.navigation)
+
+    coreLibraryDesugaring(libs.android.desugar.jdk.libs)
 
 
     // Hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.material3)
-    implementation(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
 
     // Test
     testImplementation(libs.junit)
