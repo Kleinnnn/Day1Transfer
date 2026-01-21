@@ -5,8 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.lganado.api.login.LoginRequest
-import com.lganado.login_ui.screens.LoginScreen
-import com.lganado.login_ui.viewmodels.LoginViewModel
+import com.lganado.login.presentation.screens.LoginScreen
+import com.lganado.login.presentation.viewmodels.LoginViewModel
 import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable

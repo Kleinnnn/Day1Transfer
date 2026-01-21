@@ -1,8 +1,9 @@
-package com.lganado.login_ui.viewmodels
+package com.lganado.login.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lganado.api.login.LoginApiInteractor
+import com.lganado.api.login.LoginRequest
 import com.lganado.api.login.LoginResponse
 import com.lganado.api.login.UseCaseResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,13 +23,9 @@ class LoginViewModel @Inject constructor(val loginApiInteractor: LoginApiInterac
     private val _errorMessage = MutableStateFlow<String>("")
     val errorMessage: Flow<String> get() = _errorMessage.asStateFlow()
 
-    init {
-        getLoginToken()
-    }
-
-    private fun getLoginToken() {
+    private fun getLoginToken(loginRequest: LoginRequest) {
         viewModelScope.launch(Dispatchers.IO) {
-            val res = loginApiInteractor.getLoginToken()
+            val res = loginApiInteractor.getLoginToken(loginRequest)
             when (res) {
                 is UseCaseResponse.Error -> {
                    _errorMessage.value = res.errorMessage

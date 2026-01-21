@@ -1,4 +1,4 @@
-package com.lganado.login_ui
+package com.lganado.login
 
 import org.junit.Test
 

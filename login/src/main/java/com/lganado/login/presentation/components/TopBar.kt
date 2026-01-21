@@ -1,4 +1,4 @@
-package com.lganado.login_ui.components
+package com.lganado.login.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

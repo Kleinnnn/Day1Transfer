@@ -1,4 +1,4 @@
-package com.lganado.login_ui.screens
+package com.lganado.login.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -24,10 +24,10 @@ import androidx.navigation.NavController
 import com.lganado.api.login.LoginRequest
 import com.lganado.api.login.LoginResponse
 import com.lganado.common.Day1Colors
-import com.lganado.login_ui.components.PasswordField
-import com.lganado.login_ui.components.SignInButton
-import com.lganado.login_ui.components.TopBar
-import com.lganado.login_ui.viewmodels.LoginViewModel
+import com.lganado.login.presentation.components.PasswordField
+import com.lganado.login.presentation.components.SignInButton
+import com.lganado.login.presentation.components.TopBar
+import com.lganado.login.presentation.viewmodels.LoginViewModel
 
 
 @Composable

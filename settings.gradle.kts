@@ -21,6 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Day1Transfer2"
 include(":app")
-include(":login-ui")
+include(":login")
 include(":common")
 include(":api")

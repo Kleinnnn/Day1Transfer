@@ -1,4 +1,4 @@
-package com.lganado.login_ui.components
+package com.lganado.login.presentation.components
 
 //import androidx.compose.material.icons.Icons
 import androidx.compose.foundation.layout.Arrangement
