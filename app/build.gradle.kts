@@ -58,8 +58,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":login-ui"))
+    implementation(project(":login"))
     implementation(project(":api"))
+
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.retrofit.convert)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

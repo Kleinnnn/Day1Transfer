@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.lganado.login_ui"
+    namespace = "com.lganado.login"
     compileSdk = 34
 
     defaultConfig {
@@ -53,6 +53,9 @@ android {
 dependencies {
     implementation(project(":api"))
     implementation(project(":common"))
+
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.retrofit.convert)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

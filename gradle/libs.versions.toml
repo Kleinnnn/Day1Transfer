@@ -19,6 +19,7 @@ navigationCompose = "2.8.0"
 hiltComposeNavigation = "1.2.0"
 foundation = "1.10.1"
 desugarJdkLibs =  "2.1.5"
+retrofit = "2.9.0"
 
 
 [libraries]
@@ -40,6 +41,8 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 hilt-compose-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltComposeNavigation"}
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+squareup-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
+squareup-retrofit-convert = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
