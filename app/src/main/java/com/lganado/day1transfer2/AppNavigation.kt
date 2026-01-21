@@ -13,7 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 fun AppNavigation() {
 
     val navController = rememberNavController()
-    val loginViewModel: LoginViewModel = hiltViewModel()
 
 
     NavHost(
@@ -21,6 +20,7 @@ fun AppNavigation() {
         startDestination = "loginScreen"
     ) {
         composable("loginScreen") {
+            val loginViewModel = hiltViewModel<LoginViewModel>()
             LoginScreen(navController, LoginRequest("", ""), loginViewModel)
         }
     }
